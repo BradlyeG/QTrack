@@ -6,6 +6,8 @@
 
 package gordon;
 
+import gordon.qtrackIntoUI;
+
 /**
  *
  * @author bradlye
@@ -17,6 +19,7 @@ public class QTrack {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        qtrackIntoUI.main(args);
     }
     
 }
