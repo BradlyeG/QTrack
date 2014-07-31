@@ -26,7 +26,7 @@ public class qtrackConnectionManager {
         qtrackConnection = null;
     }
        
-    public void connectToQ(String qURL, String qUser, String qPass){
+    public boolean connectToQ(String qURL, String qUser, String qPass){
         try
         {
             //First, load the JDBC Driver
@@ -37,11 +37,18 @@ public class qtrackConnectionManager {
             
             //Let the user know it worked!
             JOptionPane.showMessageDialog(null, "Connection Success!");
+            
+            //return True for backend useage
+            return true;
         }
         catch(Exception e)
         {
            //Let the user know it failed
             JOptionPane.showMessageDialog(null, "Something went wrong while connecting to the database, check the log file!", "Oh no!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, e, "Exception Occurred", JOptionPane.ERROR_MESSAGE);
+            
+            //return false for backend purposes
+            return false;
         }
     }
     
@@ -49,4 +56,7 @@ public class qtrackConnectionManager {
         return qtrackConnection;
     }
     
+    public void closeQ(){
+        qtrackConnection = null;
+    }
 }

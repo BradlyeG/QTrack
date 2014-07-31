@@ -167,8 +167,9 @@ public class qtrackIntroUI extends javax.swing.JFrame {
     //Mouse click on the start button
     private void startButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startButtonMouseClicked
         // TODO add your handling code here:
-       qConnection.connectToQ(urlField.getText(), userField.getText(), String.valueOf(passwordField.getPassword()));
-       this.dispose();
+       if(qConnection.connectToQ(urlField.getText(), userField.getText(), String.valueOf(passwordField.getPassword()))){
+         this.dispose();
+       }
     }//GEN-LAST:event_startButtonMouseClicked
 
     /**
