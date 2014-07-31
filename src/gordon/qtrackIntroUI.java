@@ -6,17 +6,23 @@
 
 package gordon;
 
+import gordon.qtrackConnectionManager;
+import javax.swing.JFrame;
+
 /**
  *
  * @author bradlye
  */
-public class qtrackIntoUI extends javax.swing.JFrame {
+public class qtrackIntroUI extends javax.swing.JFrame {
 
+    public qtrackConnectionManager qConnection = new qtrackConnectionManager();
+    
     /**
      * Creates new form qtrackIntoUI
      */
-    public qtrackIntoUI() {
+    public qtrackIntroUI() {
         initComponents();
+        qConnection.initQConnection();
     }
 
     /**
@@ -48,6 +54,11 @@ public class qtrackIntoUI extends javax.swing.JFrame {
 
         startButton.setFont(new java.awt.Font("Umpush", 0, 15)); // NOI18N
         startButton.setText("Start");
+        startButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                startButtonMouseClicked(evt);
+            }
+        });
 
         helpButton.setFont(new java.awt.Font("Umpush", 0, 15)); // NOI18N
         helpButton.setText("Help");
@@ -153,6 +164,13 @@ public class qtrackIntoUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_urlFieldActionPerformed
 
+    //Mouse click on the start button
+    private void startButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startButtonMouseClicked
+        // TODO add your handling code here:
+       qConnection.connectToQ(urlField.getText(), userField.getText(), String.valueOf(passwordField.getPassword()));
+       this.dispose();
+    }//GEN-LAST:event_startButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -170,23 +188,26 @@ public class qtrackIntoUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(qtrackIntoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(qtrackIntroUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(qtrackIntoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(qtrackIntroUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(qtrackIntoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(qtrackIntroUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(qtrackIntoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(qtrackIntroUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new qtrackIntoUI().setVisible(true);
+                new qtrackIntroUI().setVisible(true);
             }
         });
     }
+    
+    //USER MADE VARIABLES
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
