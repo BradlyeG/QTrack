@@ -49,6 +49,7 @@ public class qCameraPanel extends javax.swing.JPanel {
             //But as the application moves out of the debug/development stage,
             //We can write this to the log file
         }
+        return buffImage;
     }
     
 }
