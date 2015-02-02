@@ -1,10 +1,10 @@
 QTrack
 ======
 
-Asset management system based on java, managed and hosted locally.
+Asset management system whose goal is to be best at keeping asset data safe, sorted, and quick to retrieve. 
 
-Based on a proven platform and leveraging completely free, cross platform, and architecture independent technology, the QTrack AMS (asset management system) aims to be simple to use, and simple to set up. This project is comepltely free and open source, on the technical side of things, the project aims to work on every architecture java runs on, from the powerpc iMacs of the early 2000s, to the x86-x64 cpus released yesterday.
+The application will be based in Java, allowing for complete cross platform utilization with no extra steps to the end user required. The application will support a MySQL database, and utilize the Java Database Connection API to handle the communication, and the Google Zxing to read barcodes, and QRCodes.
 
-From an administration standpoint, it is rather easy to setup, simply create a database, host it, and enter the serial numbers. The application itself will handle the rest of the workload, creating all the profiles and associated data with each device. 
+This project is defining an asset as a computer device used within some kind of a corporation, maybe a school system or a workplace. The idea is that the technician will scan a barcode or QRCode, this brings up a “document” that shows basic statistics of the device, and any issues that are tagged with that device.
 
 The link to the project site: https://sites.google.com/site/quicktrackapp/
